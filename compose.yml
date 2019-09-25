@@ -52,6 +52,8 @@ services:
       - nextcloud-onlyoffice:/var/www/onlyoffice/Data
   
   nextcloud:
+    environment:
+      - NEXTCLOUD_ONLYOFFICE_PASSWORD={{"{{DOCKER-SECRET:nextcloud_onlyoffice_password}}"}}
     secrets:
       - source: nextcloud_nextcloud_onlyoffice_password
         target: nextcloud_onlyoffice_password
